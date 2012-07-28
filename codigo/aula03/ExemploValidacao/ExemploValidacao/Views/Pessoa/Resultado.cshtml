@@ -1,0 +1,46 @@
+﻿@model ExemploValidacao.Models.Pessoa
+@{
+    ViewBag.Title = "Lista dados da pessoa valida";
+}
+
+<h2>Lista os dados da Pessoa</h2>
+<fieldset>
+    <legend>Pessoa</legend>
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.Nome)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Nome)
+    </div>
+    
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.Observacao)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Observacao)
+    </div>
+    
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.Idade)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Idade)
+    </div>
+    
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.Email)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Email)
+    </div>
+    
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.Login)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Login)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Voltar", "Index")
+</p>
