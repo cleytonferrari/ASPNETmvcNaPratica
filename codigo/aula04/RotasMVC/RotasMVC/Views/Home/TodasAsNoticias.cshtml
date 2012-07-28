@@ -1,0 +1,23 @@
+﻿@model IEnumerable<RotasMVC.Models.Noticia>
+@{
+    ViewBag.Title = "TodasAsNoticias";
+}
+
+<h2>Todas as Noticias</h2>
+<div>
+    <ul>
+        @foreach (var item in Model)
+        {
+            <li>
+                @Html.ActionLink(item.Titulo, "MostraNoticia", "Home", new
+                    {
+                        @noticiaId = item.NoticiaId,
+                        @categoria = item.Categoria.ToLower(),
+                        @titulo = item.Titulo.ToLower()
+                    }, null)
+                <em>@Html.DisplayFor(modelItem => item.Categoria)</em>
+                <b>@Html.DisplayFor(modelItem => item.Data)</b>
+            </li>
+        }
+    </ul>
+</div>
