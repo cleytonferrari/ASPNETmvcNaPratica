@@ -9,6 +9,10 @@
     @Html.ValidationSummary(true)
     <fildset>
         <legend>Dados da Pessoa</legend>
+
+        <!-- TEM QUE COLOCAR O CAMPO HIDDEN PARA ELE ENVIAR O ID, caso tenha! -->
+        @Html.HiddenFor(model=> model.Id)
+
         <div class="editor-label">
             @Html.LabelFor(model => model.Nome)
         </div>
@@ -25,6 +29,14 @@
             @Html.ValidationMessageFor(model => model.Observacao)
         </div>
         
+         <div class="editor-label">
+            @Html.LabelFor(model => model.Cpf)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Cpf)
+            @Html.ValidationMessageFor(model => model.Cpf)
+        </div>
+
         <div class="editor-label">
             @Html.LabelFor(model => model.Idade)
         </div>

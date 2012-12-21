@@ -10,10 +10,15 @@ namespace ExemploValidacao.Controllers
 {
     public class PessoaController : Controller
     {
-        
+
         public ActionResult Index()
         {
             var pessoa = new Pessoa();
+            //exemplo para teste da validação do CPF 
+            //ele manda o ID ou não!
+            //so para teste, se o id for diferente de zero, o CPF é valido, casao contrario não é!
+            pessoa.Id = 0;
+
             return View(pessoa);
         }
 
@@ -50,7 +55,18 @@ namespace ExemploValidacao.Controllers
                     "Anderson",
                     "Renata"
                 };
-            return Json(bancoDeNomesDeExemplo.All(x => x.ToLower() != login.ToLower()),JsonRequestBehavior.AllowGet);
+            return Json(bancoDeNomesDeExemplo.All(x => x.ToLower() != login.ToLower()), JsonRequestBehavior.AllowGet);
         }
+
+        public ActionResult ValidarCpf(string cpf, int Id)
+        {
+            //aqui vai ficar sua regra de negocio
+            //fiz uma validação simples, se tiver ID é valido, se não tiver não é!
+
+            var retorno = (Id > 0);
+
+            return Json(retorno, JsonRequestBehavior.AllowGet);
+        }
+
     }
 }
