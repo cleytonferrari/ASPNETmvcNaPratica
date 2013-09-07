@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>Microsoft.AspNet.Mvc.pt-br</id>
+    <version>4.0.30506.0</version>
+    <title>Recursos Português-BR do Microsoft ASP.NET MVC 4</title>
+    <authors>Microsoft</authors>
+    <owners>Microsoft</owners>
+    <licenseUrl>http://www.microsoft.com/web/webpi/eula/MVC_4_eula_PTB.htm</licenseUrl>
+    <projectUrl>http://www.asp.net/mvc</projectUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <description>Este pacote contém os assemblies satélite em português para o ASP.NET MVC.</description>
+    <summary>Recursos em português para o pacote Microsoft.AspNet.Mvc</summary>
+    <language>pt-br</language>
+    <tags>Microsoft AspNet Mvc AspNetMvc</tags>
+    <dependencies>
+      <dependency id="Microsoft.AspNet.Mvc" version="[4.0.30506.0]" />
+    </dependencies>
+  </metadata>
+</package>
