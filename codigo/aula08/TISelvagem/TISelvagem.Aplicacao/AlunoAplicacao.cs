@@ -67,6 +67,16 @@ namespace TISelvagem.Aplicacao
             }
         }
 
+        public Aluno ListarPorId(int id)
+        {
+            using (contexto = new Contexto())
+            {
+                var strQuery = string.Format(" SELECT * FROM ALUNO WHERE AlunoId = {0} ", id);
+                var retornoDataReader = contexto.ExecutaComandoComRetorno(strQuery);
+                return TransformaReaderEmListaDeObjeto(retornoDataReader).FirstOrDefault();
+            }
+        }
+
         private List<Aluno> TransformaReaderEmListaDeObjeto(SqlDataReader reader)
         {
             var alunos = new List<Aluno>();

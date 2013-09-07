@@ -1,0 +1,45 @@
+﻿@model IEnumerable<TISelvagem.Dominio.Aluno>
+
+@{
+    ViewBag.Title = "Lista de Alunos";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Novo Aluno", "Cadastrar")
+</p>
+<table>
+    <tr>
+        <th>
+            Nome do Aluno
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Mae)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DataNascimento)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Mae)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataNascimento)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Editar", new { id=item.Id }) |
+            @Html.ActionLink("Detalhes", "Detalhes", new { id=item.Id }) |
+            @Html.ActionLink("Excluir", "Excluir", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>
