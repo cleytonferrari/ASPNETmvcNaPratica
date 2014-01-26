@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
 using TISelvagem.Dominio;
+using TISelvagem.Dominio.contrato;
 
 namespace TiSelvagem.Repositorio
 {
-    public class AlunoRepositorioADO
+    public class AlunoRepositorioADO : IRepositorio<Aluno>
     {
         private Contexto contexto;
 
@@ -45,16 +46,16 @@ namespace TiSelvagem.Repositorio
                 Inserir(aluno);
         }
 
-        public void Excluir(int id)
+        public void Excluir(Aluno aluno)
         {
             using (contexto = new Contexto())
             {
-                var strQuery = string.Format(" DELETE FROM ALUNO WHERE AlunoId = {0}", id);
+                var strQuery = string.Format(" DELETE FROM ALUNO WHERE AlunoId = {0}", aluno.Id);
                 contexto.ExecutaComando(strQuery);
             }
         }
 
-        public List<Aluno> ListarTodos()
+        public IEnumerable<Aluno> ListarTodos()
         {
             using (contexto = new Contexto())
             {
@@ -64,7 +65,7 @@ namespace TiSelvagem.Repositorio
             }
         }
 
-        public Aluno ListarPorId(int id)
+        public Aluno ListarPorId(string id)
         {
             using (contexto = new Contexto())
             {
@@ -91,5 +92,6 @@ namespace TiSelvagem.Repositorio
             reader.Close();
             return alunos;
         }
+
     }
 }
