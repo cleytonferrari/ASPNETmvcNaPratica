@@ -36,7 +36,7 @@ namespace ExemploValidacao.Models
         [Required(ErrorMessage = "A senha deve ser informada")]
         public string Senha { get; set; }
 
-        [System.ComponentModel.DataAnnotations.Compare("Senha", ErrorMessage = "As senhas não conferem")]
+        [System.ComponentModel.DataAnnota   tions.Compare("Senha", ErrorMessage = "As senhas não conferem")]
         public string ConfirmarSenha { get; set; }
     }
 }
